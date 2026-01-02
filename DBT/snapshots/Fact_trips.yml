@@ -1,0 +1,10 @@
+snapshots:
+  - name: Fact_trips
+    relation: ref('silver_trips')
+    config:
+      schema: gold
+      database: pyspark_dbt
+      unique_key: trip_id
+      strategy: timestamp
+      updated_at: last_updated_timestamp
+      dbt_valid_to_current: "to_date('9999-12-31')"
